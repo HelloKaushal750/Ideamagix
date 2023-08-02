@@ -27,9 +27,9 @@ function Lecture() {
         <h1 style={{color:"white"}}>Scheduled Lectures</h1>
       </div>
       <div style={{padding:"20px"}}>
-        {state?.map((ele) => {
+        {state.length>0 ? state?.map((ele) => {
           return <LectureDetails ele={ele} />;
-        })}
+        }) : <h1 style={{color:"red"}}>No Lecture Scheduled!</h1>}
       </div>
     </div>
   );

@@ -58,7 +58,7 @@ function Signup() {
           }}
         />
         <input
-          type="text"
+          type="password"
           placeholder="Password"
           value={state.password}
           onChange={(e) => {
