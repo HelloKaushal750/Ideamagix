@@ -15,3 +15,12 @@
 .lecture_button>button:hover{
     background-color: rgb(1, 1, 130);
 }
+.add_course_btn{
+    height: 40px;
+    background-color: blue;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}

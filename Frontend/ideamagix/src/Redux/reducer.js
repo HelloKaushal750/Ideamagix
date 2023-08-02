@@ -1,7 +1,8 @@
 const initialState = {
     isAdmin:false,
     isInstructor:false,
-    isLogin:false
+    isLogin:false,
+    instructorDet:{}
 }
 
 const reducer = (state=initialState, action)=>{
@@ -14,6 +15,9 @@ const reducer = (state=initialState, action)=>{
         }
         case 'CHECKINSTRUCTOR':{
             return { ...state,isInstructor:action.payload}
+        }
+        case 'INSTRUCTORDETAIL':{
+            return {...state,instructorDet:action.payload};
         }
         default:{
             return state

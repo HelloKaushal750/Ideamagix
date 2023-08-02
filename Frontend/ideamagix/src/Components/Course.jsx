@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
-import '../Styles/Course.css'
+import { useNavigate } from "react-router-dom";
+import "../Styles/Course.css";
+import { Link } from "react-router-dom";
 
 function Course() {
+  const navigate = useNavigate();
   const [state, setState] = useState([]);
   useEffect(() => {
     fetch("https://tired-gold-fawn.cyclic.cloud/admin/showCourse", {
@@ -23,9 +26,24 @@ function Course() {
       });
   }, []);
   return (
-    <div>
-      <div style={{ padding: "20px" }}>
+    <div style={{ backgroundColor: "#0d1627" }}>
+      <div
+        style={{
+          padding: "20px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <h1 style={{ color: "white" }}>Courses</h1>
+        <button
+          className="add_course_btn"
+          onClick={() => {
+            navigate("/addcourse");
+          }}
+        >
+          ADD NEW COURSE
+        </button>
       </div>
       <div
         style={{
@@ -35,15 +53,15 @@ function Course() {
           gap: "80px",
         }}
       >
-        {state?.map((ele) => {
+        {state.length>0 && state.map((ele) => {
           return (
             <div
               style={{
                 border: "1px solid grey",
                 padding: "15px",
                 borderRadius: "10px",
-                textAlign:'center',
-                color:"white"
+                textAlign: "center",
+                color: "white",
               }}
             >
               <div style={{ width: "100%", height: "200px" }}>
@@ -61,8 +79,20 @@ function Course() {
                 <p>Description: {ele.description}</p>
               </div>
               <div className="lecture_button">
-                <button>Add Lecture</button>
-                <button>Show Lectures</button>
+                <button
+                  onClick={() => {
+                    navigate(`/addlecture/${ele._id}`);
+                  }}
+                >
+                  Add Lecture
+                </button>
+                <button
+                  onClick={() => {
+                    navigate(`/showlecture/${ele._id}`);
+                  }}
+                >
+                  Show Lectures
+                </button>
               </div>
             </div>
           );

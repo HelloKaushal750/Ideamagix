@@ -1,0 +1,37 @@
+.addcourse_page{
+    width: 30%;
+    margin: auto;
+    border: 1px solid grey;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    border-radius: 10px;
+}
+.addcourse_page>div{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap:"20px"
+}
+.addcourse_page input{
+    padding: 5px;
+}
+.addcourse_page select{
+    padding: 5px;
+}
+.addcourse_page button{
+    width:30%;
+    padding: 10px;
+    font-size: 15px;
+    background-color: blue;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: auto;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.addcourse_page button:hover{
+    background-color: rgb(0, 0, 141);
+}
