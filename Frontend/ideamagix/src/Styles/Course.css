@@ -1,0 +1,17 @@
+.lecture_button{
+    display: flex;
+    gap:50px;
+    justify-content: center;
+}
+.lecture_button>button{
+    background-color: blue;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.lecture_button>button:hover{
+    background-color: rgb(1, 1, 130);
+}
